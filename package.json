@@ -9,7 +9,8 @@
     "lint": "next lint",
     "test": "npx jest",
     "test:watch": "npx jest --watch",
-    "init-db": "node scripts/init-db.js"
+    "init-db": "node scripts/init-db.js",
+    "vercel-build": "npm run build"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -48,7 +49,6 @@
     "@types/react-dom": "latest",
     "@types/uuid": "^10.0.0",
     "@vercel/blob": "^0.27.2",
-    "canvas": "^2.11.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "1.0.4",
@@ -82,6 +82,9 @@
     "vaul": "^0.9.6",
     "ws": "latest",
     "zod": "^3.24.1"
+  },
+  "optionalDependencies": {
+    "canvas": "^2.11.2"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.4.2",

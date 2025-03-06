@@ -21,6 +21,13 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.externals = [...config.externals, 'canvas'];
+    }
+    
+    return config;
+  },
 }
 
 mergeConfig(nextConfig, userConfig)

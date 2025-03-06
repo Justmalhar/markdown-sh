@@ -1,7 +1,29 @@
 import { put } from '@vercel/blob';
 import * as pdfjsLib from 'pdfjs-dist';
-import { createCanvas } from 'canvas';
 import fetch from 'node-fetch';
+
+// Import canvas conditionally to handle environments where it's not available
+let createCanvas: any;
+try {
+  const canvas = require('canvas');
+  createCanvas = canvas.createCanvas;
+} catch (error) {
+  console.warn('Canvas package not available, PDF to image conversion will be limited');
+  // Provide a mock implementation that will be used in environments where canvas is not available
+  createCanvas = (width: number, height: number) => {
+    return {
+      width,
+      height,
+      getContext: () => ({
+        fillStyle: '',
+        fillRect: () => {},
+        fillText: () => {},
+        font: '',
+      }),
+      toBuffer: () => Buffer.from('Fallback image - canvas not available'),
+    };
+  };
+}
 
 // Configure PDF.js for server-side use
 if (typeof window === 'undefined') {
