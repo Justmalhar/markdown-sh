@@ -46,8 +46,47 @@ bun install
 3. Set up environment variables:
 Create a `.env.local` file in the root directory with the following variables:
 ```
-NEXT_PUBLIC_FAST_MODEL=gpt-4o-mini
-NEXT_PUBLIC_ACCURATE_MODEL=gpt-4o
+# Vercel Blob token
+OCR_READ_WRITE_TOKEN=
+
+# OpenAI Settings
+OPENAI_API_KEY=
+OPENAI_BASE_URL=https://api.openai.com/v1
+
+# Model settings
+FAST_MODEL=gpt-4o-mini
+SLOW_MODEL=gpt-4o
+
+# Client App Settings
+NEXT_PUBLIC_APP_NAME=markdown.sh
+NEXT_PUBLIC_CONTACT_EMAIL=malharujawane@gmail.com
+NEXT_PUBLIC_APP_URL=https://localhost:3000
+
+# Client App Markdown.sh API Key 
+OCR_API_KEY=
+
+
+# Neon DB connection details (Get from Vercel - Storage )
+DATABASE_URL=
+
+DATABASE_URL_UNPOOLED=
+
+# Parameters for constructing your own connection string
+PGHOST=
+PGHOST_UNPOOLED=
+PGUSER=
+PGDATABASE=
+PGPASSWORD=
+
+# Parameters for Vercel Postgres Templates
+POSTGRES_URL=
+POSTGRES_URL_NON_POOLING=
+POSTGRES_USER=
+POSTGRES_HOST=
+POSTGRES_PASSWORD=
+POSTGRES_DATABASE=neondb
+POSTGRES_URL_NO_SSL=
+POSTGRES_PRISMA_URL=
 ```
 
 4. Run the development server:
