@@ -1,0 +1,50 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#121212" />
+
+  <!-- Background Pattern of Markdown Symbols with Gradient -->
+  <defs>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="white" stop-opacity="0" />
+      <stop offset="100%" stop-color="white" stop-opacity="0.15" />
+    </linearGradient>
+
+    <pattern id="md-pattern" x="0" y="0" width="60" height="60" patternUnits="userSpaceOnUse">
+      <text x="10" y="30" fill="url(#fade)" font-family="monospace" font-size="24">{"#"}</text>
+      <text x="30" y="50" fill="url(#fade)" font-family="monospace" font-size="24">{"*"}</text>
+    </pattern>
+
+    <mask id="fade-mask">
+      <rect width="1200" height="630" fill="url(#fade)" />
+    </mask>
+  </defs>
+
+  <!-- Pattern Background with Mask -->
+  <rect width="1200" height="630" fill="url(#md-pattern)" mask="url(#fade-mask)" />
+
+  <!-- Main Logo Group -->
+  <g transform="translate(100, 200)">
+    <text font-size="120" font-family="Georgia, serif" font-weight="bold" fill="white" letter-spacing="-0.02em">markdown.sh</text>
+
+    <!-- Document Icon -->
+    <g transform="translate(420, -100) scale(0.6)">
+      <path
+        d="M40 0H10C4.5 0 0 4.5 0 10V50C0 55.5 4.5 60 10 60H50C55.5 60 60 55.5 60 50V20L40 0ZM40 8L52 20H40V8ZM50 54H10C7.8 54 6 52.2 6 50V10C6 7.8 7.8 6 10 6H34V20C34 23.3 36.7 26 40 26H54V50C54 52.2 52.2 54 50 54Z"
+        fill="white"
+      />
+      <path
+        d="M15 40V20H22L29 29L36 20H43V40H36V28L29 37L22 28V40H15Z"
+        fill="white"
+      />
+    </g>
+  </g>
+
+  <!-- Tagline -->
+  <text x="100" y="300" font-size="48" font-family="system-ui, sans-serif" fill="white" opacity="0.9">OCR to Markdown Converter</text>
+
+  <!-- Description -->
+  <text x="100" y="380" font-size="32" font-family="system-ui, sans-serif" fill="white" opacity="0.8">Transform images and PDFs to markdown with AI</text>
+
+  <!-- URL -->
+  <text x="100" y="560" font-size="32" font-family="monospace" fill="white" opacity="0.7">http://markdown.sh</text>
+</svg>
